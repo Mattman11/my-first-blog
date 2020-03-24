@@ -3,13 +3,16 @@
     <title>Matt's Blog</title>
 </head>
 <body>
+<div>
+    <h1><a href="/">Django Girls Blog</a></h1>
+</div>
+
+{% for post in posts %}
     <div>
-        <p>Hola!!</p>
-        <p>Funciona?<br><strong>Funciona!!</strong></p>
-        <p>todo lo que se va a crear en esta pagina tiene su origen aqui: <a href= "https://djangogirls.org">link</a></p>
-    </div> 
-    <div>
-        <p><strong>¡Oh vosotros los que entráis, abandonad toda esperanza!</strong></p>
+        <p> publicado: {{ post.published_date }}</p>
+        <h2><a href="">{{ post.title }}</a></h2>
+        <p>{{ post.text|linebreaksbr }}</p>
     </div>
+{% endfor %}
 </body>
 </html>
